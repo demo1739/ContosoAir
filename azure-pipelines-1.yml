@@ -1,6 +1,12 @@
-pool: Default
+pool:
+  name: Default
+  demands:
+    - npm  # Ensure that npm is available on the agent
+    - Agent.Version -gtVersion 2.182.1  # Ensure that the agent is at a version greater than 2.182.1
+
 trigger:
   - master
+
 steps:
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(build.artifactstagingdirectory)/Templates'
@@ -13,7 +19,7 @@ steps:
     displayName: 'npm custom'
     inputs:
       command: custom
-      versionSpec: '6.x'  # Specify the NPM version here
+      versionSpec: '6.x'  # Specify the NPM version (modify if necessary)
       verbose: false
       customCommand: 'install --production'
 
