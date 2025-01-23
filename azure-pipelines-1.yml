@@ -13,6 +13,7 @@ steps:
     displayName: 'npm custom'
     inputs:
       command: custom
+      versionSpec: '6.x'  # Specify the NPM version here
       verbose: false
       customCommand: 'install --production'
 
