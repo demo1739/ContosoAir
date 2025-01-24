@@ -1,4 +1,4 @@
-pool: Default
+pool: 'windows-2019'
 trigger:
   - master
 steps:
@@ -12,7 +12,7 @@ steps:
   - task: Npm@1
     inputs:
       command: 'install'
- 
+
   - task: ArchiveFiles@2
     displayName: 'Archive $(Build.SourcesDirectory)'
     inputs:
