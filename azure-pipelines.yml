@@ -2,10 +2,6 @@ pool: Default  # Using the self-hosted Default agent pool
 trigger:
   - master
 steps:
-  # Check if npm is installed on the agent
-  - script: |
-      npm --version
-    displayName: 'Check npm Version'
 
   # Ensure Node.js (and npm) is installed if npm is not found
   - task: UseNode@1
