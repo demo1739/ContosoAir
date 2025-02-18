@@ -4,10 +4,6 @@ trigger:
   - master
 
 steps:
-  - script: |
-      npm --version
-    displayName: 'Check npm Version'
-
   - task: UseNode@1
     inputs:
       versionSpec: '16.x'  # You can specify the version you need here
